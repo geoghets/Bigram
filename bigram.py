@@ -1,3 +1,7 @@
+# START MY TIMER
+import time
+start = time.time()
+
 def bigram(string_):
     import re
     string_ = re.split("\W+|\n+",string_)                          #String becomes list of words with no punctuation
@@ -29,24 +33,25 @@ def sentence_makr(seed,length,bigr_dict):
     return output_string
 
 title1 = input("Provide a text file to ingest:")
-#title1 = str(title1)
+#title1 = "Ivanhoe.txt"
 text1 = open(title1, "r", encoding="utf8").read()
 a = bigram(text1)
+#
+# seed_word = None
+# while seed_word not in a:
+#     seed_word = input("What seed word would you like to begin with?: ")
+#     seed_word = seed_word.lower()
+#     if seed_word not in a:
+#         print("Sorry, '{}' is not an available seed term".format(seed_word))
 
-seed_word = None
-while seed_word not in a:
-    seed_word = input("What seed word would you like to begin with?: ")
-    seed_word = seed_word.lower()
-    if seed_word not in a:
-        print("Sorry, '{}' is not an available seed term".format(seed_word))
+#length = input("How long of a sentence would you like to generate?:")
 
-length = input("How long of a sentence would you like to generate?:")
-
-a = sentence_makr(seed=seed_word,length=int(length),bigr_dict=a)
+a = sentence_makr(seed="made",length=int(6),bigr_dict=a)
 print(a)
 
 
 
-
-
+# STOP MY TIMER
+elapsed_time = time.time() - start # in seconds
+print(elapsed_time)
 
