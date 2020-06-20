@@ -74,12 +74,3 @@ print(sentence_makr(seed=seed_word,length=length,bigr_dict=a))
 
 
 
-chainer = MarkovChainMaker("some.txt")
-chainer.chain("seed", 7)
-#=> "seed output seven random words words words"
-chainer.chain("other", 5)
-#=> "other five random words words"
-
-chainer2 = MarkovChainMaker("some-other.txt")
-chainer2.chain("different", 3)
-#=> "different three random"
